@@ -1,4 +1,4 @@
-specVersion: 0.0.1
+specVersion: 0.0.2
 schema:
   file: ./schema.graphql
 dataSources:
@@ -8,6 +8,7 @@ dataSources:
     source:
       address: "0xf3E6DbBE461C6fa492CeA7Cb1f5C5eA660EB1B47"
       abi: Token
+      startBlock: 12813031
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -21,10 +22,6 @@ dataSources:
         - name: Token
           file: ./abis/Token.json
       eventHandlers:
-        - event: Approval(indexed address,indexed address,indexed uint256)
-          handler: handleApproval
-        - event: ApprovalForAll(indexed address,indexed address,bool)
-          handler: handleApprovalForAll
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
         - event: Transfer(indexed address,indexed address,indexed uint256)
